@@ -42,7 +42,7 @@ public class createOrderServlet extends HttpServlet {
                     int number = resultset.getInt("number");
 
 
-                    String sql7="select * from book where book_id=? and amount>?";
+                    String sql7="select * from book where book_id=? and amount>=?";
                     preparedStatement = connect.prepareStatement(sql7);
                     preparedStatement.setInt(1, book_id);
                     preparedStatement.setInt(2, number);
@@ -51,7 +51,7 @@ public class createOrderServlet extends HttpServlet {
                     {
                         String sql5 = "update book\n" +                                     //把书的总量减去用户购买的数量
                                 "set amount=amount-?\n" +
-                                "where book_id=? and amount>?;";
+                                "where book_id=? and amount>=?;";
                         preparedStatement = connect.prepareStatement(sql5);
                         preparedStatement.setInt(1, number);
                         preparedStatement.setInt(2, book_id);

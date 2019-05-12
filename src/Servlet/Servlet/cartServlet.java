@@ -49,6 +49,7 @@ public class cartServlet extends HttpServlet {
                 jo.put("author", rs.getString("author"));
                 jo.put("sales",rs.getInt("sales"));
                 jo.put("number",rs.getInt("number"));
+                jo.put("img_src",rs.getString("img_src"));
                 jo.put("abstract",rs.getString("abstract"));
                 jArray.add(jo);
             }
